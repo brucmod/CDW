@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
       vb.memory = 2048
       vb.cpus = 2
     end
-    master.vm.box = "ubuntu/bionic64"
-    master.disksize.size = "25GB"
+    master.vm.box = "ubuntu/focal64"
+    #master.disksize.size = "25GB"
     master.vm.hostname = "master"
     master.vm.network :private_network, ip: "10.0.0.10"
     master.vm.network :public_network, ip: "10.89.13.48", netmask: '255.255.255.0',gateway: "10.89.13.1", bridge: "ens160"
@@ -23,8 +23,8 @@ Vagrant.configure("2") do |config|
         vb.memory = 2048
         vb.cpus = 2
       end
-      node.vm.box = "ubuntu/bionic64"
-      node.disksize.size = "25GB"
+      node.vm.box = "ubuntu/focal64"
+      #node.disksize.size = "25GB"
       node.vm.hostname = name
       node.vm.network :private_network, ip: "10.0.0.#{i + 11}"
       #node.vm.network :public_network, ip: "10.89.13.#{i + 48}", netmask: "255.255.255.0", bridge: "ens160"
