@@ -14,8 +14,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "####  installing updates latest ansible/purestorage"
 sudo apt-get update
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible -y
+
 sudo apt-get install ansible --assume-yes
 sudo apt-get install python3-pip --assume-yes
 echo "#### use pip3 to install purestorage"
