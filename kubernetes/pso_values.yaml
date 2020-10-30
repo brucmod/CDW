@@ -1,7 +1,0 @@
-
-clusterID: vagrant
-arrays:
-  FlashArrays:
-    - MgmtEndPoint: "10.89.22.37"
-      APIToken: "6340a0a1-40cd-7f95-d9fc-9c3f0b1331ae"
- 
