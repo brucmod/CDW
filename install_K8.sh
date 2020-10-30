@@ -35,7 +35,8 @@ sudo apt-get install multipath-tools --assume-yes
 echo '#install scsi tools'
 sudo apt-get install -y scsitools --assume-yes
 
-
+echo " restarting iscsid service"
+sudo systemctl restart iscsid.service
 
 # Typing "ansible-playbook" everytime is a hassle...
 echo "" >> ~/.bashrc
