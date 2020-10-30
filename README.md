@@ -28,9 +28,12 @@ When you want to use this demo find the Vhd1purevm1 machine in the pure folder i
 Right click on the machine and choose manage snapshots
 
 From the snap shot menu, you can from three states
+
 BASE Ubuntu image  - you follow all the steps below  starting at 43 - longest setup
 cdw_lab demo ready  - you can skip to line 51 - long setup
 cluster running - skip to line 78 - short setup
+
+Choose which one you want and click revert to from vcenter menu
 
 Launch remote console from Vcenter
 From Linux GUI open a terminal window to proceed
