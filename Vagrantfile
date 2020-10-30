@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     master.vm.provision :shell, privileged: false, inline: $provision_master_node
     end
     
-  %w{node1}.each_with_index do |name, i|
+  %w{node1 node2 node3}.each_with_index do |name, i|
     config.vm.define name do |node|
       node.vm.provider "virtualbox" do |vb|
         vb.name = "node#{i + 1}"
