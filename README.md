@@ -22,6 +22,8 @@
 ### Since this lab is designed to be portable, it can be run on an Ubuntu 20.04 installation (including ones that are running under a local Hypervisor (Fusion/Workstation/VBirtualbox, etc))
 ### I have listed the steps below that need to be preinstalled before you can download this repo and run it locally
 
+Remember that while it will run anywhere, it will not have access to any Persistant Storage containers without access to a Pure array   
+
 When you want to use this demo find the Vhd1purevm1 machine in the pure folder in VCenter
 Right click on the machine and choose manage snapshots
 
