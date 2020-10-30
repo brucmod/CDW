@@ -11,11 +11,11 @@ Vagrant.configure("2") do |config|
     #master.disksize.size = "25GB"
     master.vm.hostname = "master"
     master.vm.network :private_network, ip: "10.0.0.10"
-    master.vm.network :public_network, ip: "10.89.13.48", netmask: '255.255.255.0',gateway: "10.89.13.1", bridge: "ens160"
-    master.vm.network :public_network, ip: "10.89.44.57", netmask: '255.255.254.0',gateway: "10.89.44.1", bridge: "ens192"
+    master.vm.network :private_network, ip: "11.89.13.48", netmask: '255.255.255.0'
+    master.vm.network :private_network, ip: "11.89.44.57", netmask: '255.255.254.0'
     master.vm.provision :shell, privileged: false, inline: $provision_master_node
     end
-
+    
   %w{node1}.each_with_index do |name, i|
     config.vm.define name do |node|
       node.vm.provider "virtualbox" do |vb|
@@ -27,9 +27,8 @@ Vagrant.configure("2") do |config|
       #node.disksize.size = "25GB"
       node.vm.hostname = name
       node.vm.network :private_network, ip: "10.0.0.#{i + 11}"
-      #node.vm.network :public_network, ip: "10.89.13.#{i + 48}", netmask: "255.255.255.0", bridge: "ens160"
-      #node.vm.network :public_network, ip: "10.89.44.#{i + 57}", netmask: "255.255.254.0", bridge: "ens192"
-
+      node.vm.network :private_network, ip: "11.89.13.#{i + 48}"
+      node.vm.network :private_network, ip: "11.89.44.#{i + 57}"
       node.vm.provision :shell, privileged: false, inline: <<-SHELL
 
       sudo /vagrant/join.sh
