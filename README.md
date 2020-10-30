@@ -1,26 +1,36 @@
 # CDW K8's demo lab 
 
-Welcome to the new and improved K8's/Ansible/PSO/PSO Explorer demo lab.
+### Welcome to the new and improved K8's/Ansible/PSO/PSO Explorer demo lab.
 
-In this Current version I have replace all the inner workings of the previous lab.
-I have moved to a vagrant deployment model using virtual box running on Ubuntu 20.04
-to enable the deployment of a Master and 3 worker node K8's cluster
-that also has access to the Pure CSI driver (PSO) to enable persistant storage (PVC)  as well as the Pure PSO explorer web app which gives the user a much easier way to understand all the storage/pods they have running in the wild.
+### In this Current version I have replace all the inner workings of the previous lab.
+### I have moved to a vagrant deployment model using virtual box running on Ubuntu 20.04
+### to enable the deployment of a Master and 3 worker node K8's cluster
+### that also has access to the Pure CSI driver (PSO) to enable persistant storage (PVC)  as well as the Pure PSO explorer web app which gives the user a much easier way to understand all the storage/pods they have running in the wild.
 
-for those interested in the inner workings of Vagrant. I have listed below what the Vagrantfile actually does :
+### for those interested in the inner workings of Vagrant. I have listed below what the Vagrantfile actually does :
 
-The vagrant file will do the following:
-1.  Provision all local VMs using VirtualBox
-2.  Patch the OS
-3.  Install Docker
-4.  Install k8s control plane
-5.  Initialize cluster with Flannel CIDR block & install Flannel
-6.  Join the nodes to the master
-7.  Create and copy the SSH key to all machines so you can SSH to any node from the Master.  Add names & IPs to the local hosts file on each master and node.  Create alias in vagrant home for kubectl...just use k
-8.  Make required Ubuntu OS mods for the cluster to function properly using an install.sh script
+### The vagrant file will do the following:
+### 1.  Provision all local VMs using VirtualBox
+### 2.  Patch the OS
+### 3.  Install Docker
+### 4.  Install k8s control plane
+### 5.  Initialize cluster with Flannel CIDR block & install Flannel
+### 6.  Join the nodes to the master
+### 7.  Create and copy the SSH key to all machines so you can SSH to any node from the Master.  Add names & IPs to the local hosts file on each master and node.  Create alias in vagrant home for kubectl...just use k
+### 8.  Make required Ubuntu OS mods for the cluster to function properly using an install.sh script
 
-Since this lab is designed to be portable, it can be run on an Ubuntu 20.04 installation (including ones that are running under a local Hypervisor (Fusion/Workstation/VBirtualbox, etc))
-I have listed the steps below that need to be preinstalled before you can download this repo and run it locally
+### Since this lab is designed to be portable, it can be run on an Ubuntu 20.04 installation (including ones that are running under a local Hypervisor (Fusion/Workstation/VBirtualbox, etc))
+### I have listed the steps below that need to be preinstalled before you can download this repo and run it locally
+
+When you want to play this  find the Vhd1purevm1  machine in the pure folder
+Right clik on the machine and choose manage snapshots
+
+From the snap shot menu, you can from three states
+BASE Ubuntu image  - you follow all the steps below  starting at 43
+cdw_lab demo ready  - you can skip to line 51
+cluster running - skip to line 78
+
+
 
 ## Dependencies
 
