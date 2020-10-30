@@ -22,13 +22,13 @@
 ### Since this lab is designed to be portable, it can be run on an Ubuntu 20.04 installation (including ones that are running under a local Hypervisor (Fusion/Workstation/VBirtualbox, etc))
 ### I have listed the steps below that need to be preinstalled before you can download this repo and run it locally
 
-When you want to play this  find the Vhd1purevm1  machine in the pure folder
-Right clik on the machine and choose manage snapshots
+When you want to use this demo find the Vhd1purevm1 machine in the pure folder in VCenter
+Right click on the machine and choose manage snapshots
 
 From the snap shot menu, you can from three states
-BASE Ubuntu image  - you follow all the steps below  starting at 43
-cdw_lab demo ready  - you can skip to line 51
-cluster running - skip to line 78
+BASE Ubuntu image  - you follow all the steps below  starting at 43 - longest setup
+cdw_lab demo ready  - you can skip to line 51 - long setup
+cluster running - skip to line 78 - short setup
 
 
 
