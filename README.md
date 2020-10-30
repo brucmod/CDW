@@ -32,6 +32,9 @@ BASE Ubuntu image  - you follow all the steps below  starting at 43 - longest se
 cdw_lab demo ready  - you can skip to line 51 - long setup
 cluster running - skip to line 78 - short setup
 
+Launch remote console from Vcenter
+From Linux GUI open a terminal window to proceed
+
 
 
 ## Dependencies
@@ -42,6 +45,7 @@ Open a shell and install the vagrant disksize plugin:
 ```bash
 $ vagrant plugin install vagrant-disksize
 ```
+
 
 ## Make sure git is installed
 
