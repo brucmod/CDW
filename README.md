@@ -108,12 +108,18 @@ cd cdw_post
 kubectl get svc --namespace psoexpl -w pso-explorer
 ```
 
-Jot down the 5 digit port forwrding number
-From the web browser running on the top level Ubuntu node go to 10.0.0.1:5 digit port number
-this will bring up the PSO Explore web gui
+### Jot down the 5 digit port forwrding number ###
+### From the web browser running on the top level Ubuntu node go to 10.0.0.1:5 digit port number ###
+### this will bring up the PSO Explore web gui ###
 
 ### The demo scripts are located in the kubernetes directory. They are designed to be run in order as there may be dependencies.###
 
 ### as you run them in order, they will create a 14gb PVC on the local Pure FA, then start up a container/pod running minio and start the pod service ###
 
-### You can now log in to minio using the service port. Find the port with ``` kubectl get svc``` (should always be 9000). Joint down the 5 digit port forwarding number  and then from the same web browser as before  http://10.00.10: 5 digit number.  you should then see the minio S3 NAS gui and you could log in with these credentials .Username/password: minio:minio123 ###
+### You can now log in to minio using the service port. Find the port with ###
+ ```
+ kubectl get svc
+ ``` 
+
+ 
+ ### (should always be 9000). Joint down the 5 digit port forwarding number  and then from the same web browser as before  http://10.0.0.10: 5 digit number.  you should then see the minio S3 NAS gui and you could log in with these credentials .Username/password: minio:minio123 ###
