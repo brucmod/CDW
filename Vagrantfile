@@ -2,12 +2,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, privileged: true, inline: $install_common_tools   
   config.vm.provision :shell, path: "install_K8.sh"
   config.vm.define :master do |master|
-    master.vm.provider :virtualbox do |vb|
+    master.vm.provider :docker do |vb|
       vb.name = "master"
       vb.memory = 2048
       vb.cpus = 2
     end
-    master.vm.box = "ubuntu/focal64"
+    master.vm.box = "tknerr/baseimage-ubuntu-18.04"
     #master.disksize.size = "25GB"
     master.vm.hostname = "master"
     master.vm.network :private_network, ip: "10.0.0.10"
@@ -18,12 +18,12 @@ Vagrant.configure("2") do |config|
     
   %w{node1 node2 node3}.each_with_index do |name, i|
     config.vm.define name do |node|
-      node.vm.provider "virtualbox" do |vb|
+      node.vm.provider "docker" do |vb|
         vb.name = "node#{i + 1}"
         vb.memory = 2048
         vb.cpus = 2
       end
-      node.vm.box = "ubuntu/focal64"
+      node.vm.box = "tknerr/baseimage-ubuntu-18.04"
       #node.disksize.size = "25GB"
       node.vm.hostname = name
       node.vm.network :private_network, ip: "10.0.0.#{i + 11}"
