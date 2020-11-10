@@ -3,9 +3,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "install_K8.sh"
   config.vm.define :master do |master|
     master.vm.provider :docker do |vb|
-      vb.name = "master"
-      vb.memory = 2048
-      vb.cpus = 2
+      #vb.name = "master"
+      #vb.memory = 2048
+      #vb.cpus = 2
     end
     master.vm.box = "tknerr/baseimage-ubuntu-18.04"
     #master.disksize.size = "25GB"
@@ -19,9 +19,9 @@ Vagrant.configure("2") do |config|
   %w{node1 node2 node3}.each_with_index do |name, i|
     config.vm.define name do |node|
       node.vm.provider "docker" do |vb|
-        vb.name = "node#{i + 1}"
-        vb.memory = 2048
-        vb.cpus = 2
+        #vb.name = "node#{i + 1}"
+        #vb.memory = 2048
+        #vb.cpus = 2
       end
       node.vm.box = "tknerr/baseimage-ubuntu-18.04"
       #node.disksize.size = "25GB"
